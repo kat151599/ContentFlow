@@ -1,11 +1,7 @@
-# Portfolio Notice
+# Portfolio case study
 
-© 2026 Kateryna Tytarenko. All rights reserved.
+This repository is a public portfolio presentation of ContentFlow.
 
-This repository contains portfolio documentation only.
+The application source code, production configuration, credentials, internal business data, and reusable private implementation components are intentionally not published here.
 
-The underlying application source code, production configuration, credentials, internal business data, prompts, integration logic and other proprietary implementation materials are **not distributed in this repository**.
-
-No license to use, copy, modify, distribute, sublicense or commercialize the underlying application or its private source code is granted by publication of this case study.
-
-References to third-party products, APIs, frameworks or services are for descriptive purposes only and remain subject to their respective licenses and terms.
+Screenshots are included solely to demonstrate the product and its implemented workflow. Sensitive credentials and private operational data are excluded or masked.
