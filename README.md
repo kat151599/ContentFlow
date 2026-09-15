@@ -1,36 +1,38 @@
-# AI Content Automation Platform — Case Study
+# ContentFlow — AI-платформа автоматизації контенту
 
-> **Portfolio case study. Source code and production configuration are intentionally private.**
+[Українська](README.md) · [Русский](README.ru.md) · [English](README.en.md)
+
+> **Портфоліо-кейс. Вихідний код і production-конфігурація навмисно залишаються приватними.**
 >
-> This repository contains a high-level description of the system, its architecture, implemented functionality and my role in the project. It does **not** contain application source code, credentials or proprietary business data.
+> Цей репозиторій містить високорівневий опис системи, її архітектури, реалізованої функціональності та моєї ролі в проєкті. Тут немає вихідного коду застосунку, облікових даних або внутрішніх бізнес-даних.
 
-## Overview
+## Огляд
 
-Внутрішня AI-платформа для підготовки та подальшої автоматизації контенту. Система створюється як єдине робоче середовище, де матеріали можна зберігати, редагувати, обробляти через різні LLM-провайдери та готувати до подальшої публікації через зовнішні інтеграції.
+ContentFlow — внутрішня AI-платформа для підготовки та подальшої автоматизації контенту. Система створюється як єдине робоче середовище, де матеріали можна зберігати, редагувати, обробляти через різних LLM-провайдерів і готувати до подальшої публікації через зовнішні інтеграції.
 
 Проєкт виник із практичної бізнес-задачі: зменшити кількість ручних операцій при роботі з контентом і побудувати керований pipeline, який можна поступово розширювати новими джерелами, AI-моделями та каналами публікації.
 
-## Business problem
+## Бізнес-проблема
 
 Робота з контентом складалася з великої кількості окремих ручних дій: підготовка матеріалу, перенесення між сервісами, робота з різними AI-моделями, редагування, зберігання результатів та подальша передача матеріалу в CMS.
 
 Замість набору розрізнених інструментів була спроєктована єдина внутрішня система, яку можна розвивати до повного pipeline:
 
 ```text
-Source / material
+Джерело / матеріал
        ↓
-Collection & filtering
+Збір і фільтрація
        ↓
-LLM processing
+LLM-обробка
        ↓
-Editorial review
+Редакторська перевірка
        ↓
-CMS / publication channel
+CMS / канал публікації
 ```
 
-Частина зовнішніх джерел і publishing-adapters є наступним етапом розвитку платформи; у цьому case study вони не позначаються як завершені функції.
+Частина зовнішніх джерел і publishing-adapters є наступним етапом розвитку платформи; у цьому кейсі вони не позначаються як завершені функції.
 
-## My role
+## Моя роль
 
 Я відповідала за повний цикл створення рішення:
 
@@ -41,7 +43,7 @@ CMS / publication channel
 - перевірку поведінки системи в реальному середовищі;
 - тестування, виправлення помилок і подальшу ітеративну розробку.
 
-## Implemented functionality
+## Реалізована функціональність
 
 На поточному етапі реалізовано:
 
@@ -59,24 +61,24 @@ CMS / publication channel
 - запуск через Docker Compose;
 - окремий сценарій запуску для Windows.
 
-## Architecture
+## Архітектура
 
 ```mermaid
 flowchart LR
-    A[Materials / future external sources] --> B[Web application]
+    A[Матеріали / майбутні зовнішні джерела] --> B[Web application]
     B --> C[Content workspace & editor]
     C --> D[LLM provider layer]
     D --> E[Selected AI model]
     C --> F[(SQLite)]
     D --> F
     B --> G[CMS integration settings]
-    G -. next stage .-> H[CMS / publication adapters]
-    A -. next stage .-> I[Social / news source adapters]
+    G -. наступний етап .-> H[CMS / publication adapters]
+    A -. наступний етап .-> I[Social / news source adapters]
 ```
 
 Архітектура навмисно розділяє роботу з контентом, LLM-провайдерами, зберіганням даних та зовнішніми інтеграціями, щоб нові джерела або моделі можна було додавати без перебудови всієї системи.
 
-## Technology stack
+## Технології
 
 - **Python**
 - **FastAPI**
@@ -87,9 +89,9 @@ flowchart LR
 - **Pydantic**
 - **Docker / Docker Compose**
 - **Windows automation**
-- encrypted secrets storage
+- шифроване зберігання секретів
 
-## Current development direction
+## Поточний напрям розвитку
 
 Наступні модулі заплановані як окремі етапи, а не подаються тут як уже завершені:
 
@@ -99,20 +101,20 @@ flowchart LR
 - CMS publishing;
 - background jobs, retries and failure handling;
 - Telegram notifications;
-- adapters for additional publication channels.
+- adapters для додаткових каналів публікації.
 
-## Result
+## Результат
 
 Створено базову платформу, на якій можна будувати повний content automation workflow замість набору розрізнених ручних операцій. Уже реалізована частина дозволяє централізовано працювати з матеріалами, конфігурацією AI-провайдерів і моделями та формує основу для подальшого автоматичного збору й публікації контенту.
 
-## Demo
+## Демонстрація
 
 Скріншоти та коротку демонстрацію роботи системи можна надати під час технічної співбесіди. Публічний репозиторій навмисно не містить production source code.
 
 ---
 
-### Source code policy
+### Політика щодо вихідного коду
 
-**Source code is private / proprietary.**
+**Вихідний код є приватним / proprietary.**
 
-This repository is intended only as a portfolio case study. It does not grant access to the implementation, production environment, credentials, internal business data or reusable proprietary components.
+Цей репозиторій призначений лише для демонстрації кейсу в портфоліо. Він не надає доступу до реалізації, production-середовища, облікових даних, внутрішньої бізнес-інформації або повторно використовуваних proprietary-компонентів.
