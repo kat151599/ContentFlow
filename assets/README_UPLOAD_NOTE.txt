@@ -1,0 +1,1 @@
+Image assets are being repaired after an encoding issue.
