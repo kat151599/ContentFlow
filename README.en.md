@@ -14,14 +14,17 @@
 
 The project grew from a practical business need: reduce repetitive manual operations and build a pipeline that can be extended with new sources, models, and publication channels without rebuilding the entire system.
 
+## Project at a glance
+
 | | |
 |---|---|
-| **Solution type** | Internal tool / AI content automation |
-| **My role** | Process analysis, architecture, AI-assisted implementation, testing, iterative development |
-| **Backend** | Python, FastAPI, SQLAlchemy, SQLite |
-| **Integrations** | REST / HTTP APIs, LLM APIs, CMS settings |
-| **Deployment** | Docker Compose + Windows workflow |
-| **Status** | Active development / working MVP |
+| **Business problem** | Content preparation, editing and AI provider configuration required disconnected manual steps. |
+| **Solution** | One workspace for creating and editing materials, viewing sources and managing LLM provider connections. |
+| **Working demonstration** | [Working interface](assets/contentflow-showcase.webp) · [Materials and sources](assets/contentflow-workflow.webp) · [Model configuration](assets/contentflow-ai-models.webp). No public interactive demo; a live walkthrough is available on request. |
+| **Result** | Materials and model configuration are centralized. Automated ingestion and publishing are not implemented yet. |
+| **Technical implementation** | Python, FastAPI, SQLAlchemy, SQLite, LLM provider abstraction, Docker Compose. |
+| **Project status** | Working MVP; ingestion, AI-processing pipeline and publishing modules are planned. |
+| **My contribution** | Business-process analysis, component boundaries, integration architecture and real-environment validation. |
 
 ## Business problem
 
@@ -70,9 +73,11 @@ I was responsible for the full solution lifecycle:
 - analyzing the business process and deciding what should be automated;
 - decomposing the problem and designing the architecture;
 - choosing the integration approach for LLM providers and the CMS;
-- AI-assisted implementation and work with existing code;
+- implementation and integration with existing code;
 - validating system behavior in the real environment;
 - testing, debugging, and iterative development.
+
+*Development process: LLM tools assisted with implementation and code analysis; requirements, architecture decisions and acceptance testing remained my responsibility.*
 
 ## Implemented
 
